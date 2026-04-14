@@ -29,6 +29,12 @@ public class SwiftBase extends javax.swing.JFrame {
     private void initComponents() {
 
         Container = new javax.swing.JPanel();
+        login = new javax.swing.JLabel();
+        email = new java.awt.TextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        email_l = new javax.swing.JLabel();
+        email_l1 = new javax.swing.JLabel();
+        BGIM = new javax.swing.JLabel();
         GlassEffect =  new javax.swing.JPanel() {
             @Override
             protected void paintComponent(java.awt.Graphics g) {
@@ -38,7 +44,6 @@ public class SwiftBase extends javax.swing.JFrame {
             }
         };
         GlassEffect.setOpaque(false);
-        BGIM = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -47,6 +52,69 @@ public class SwiftBase extends javax.swing.JFrame {
 
         Container.setBackground(new java.awt.Color(21, 26, 43));
         Container.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        login.setBackground(new java.awt.Color(204, 204, 204));
+        login.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("Login");
+
+        email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        email.setForeground(new java.awt.Color(204, 204, 204));
+        email.setText("Email");
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setText("jPasswordField1");
+
+        email_l.setBackground(new java.awt.Color(255, 255, 255));
+        email_l.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        email_l.setForeground(new java.awt.Color(255, 255, 255));
+        email_l.setText("Password");
+
+        email_l1.setBackground(new java.awt.Color(255, 255, 255));
+        email_l1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        email_l1.setForeground(new java.awt.Color(255, 255, 255));
+        email_l1.setText("Email");
+
+        javax.swing.GroupLayout ContainerLayout = new javax.swing.GroupLayout(Container);
+        Container.setLayout(ContainerLayout);
+        ContainerLayout.setHorizontalGroup(
+            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContainerLayout.createSequentialGroup()
+                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContainerLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                            .addComponent(email_l, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ContainerLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(login)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        ContainerLayout.setVerticalGroup(
+            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContainerLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(email_l1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(email_l)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 280, 350));
+
+        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg1.png"))); // NOI18N
+        BGIM.setPreferredSize(new java.awt.Dimension(720, 480));
+        getContentPane().add(BGIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         javax.swing.GroupLayout GlassEffectLayout = new javax.swing.GroupLayout(GlassEffect);
         GlassEffect.setLayout(GlassEffectLayout);
@@ -59,28 +127,7 @@ public class SwiftBase extends javax.swing.JFrame {
             .addGap(0, 302, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout ContainerLayout = new javax.swing.GroupLayout(Container);
-        Container.setLayout(ContainerLayout);
-        ContainerLayout.setHorizontalGroup(
-            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(GlassEffect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        ContainerLayout.setVerticalGroup(
-            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(GlassEffect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 280, 350));
-
-        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg1.png"))); // NOI18N
-        BGIM.setPreferredSize(new java.awt.Dimension(720, 480));
-        getContentPane().add(BGIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        getContentPane().add(GlassEffect, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -115,5 +162,10 @@ public class SwiftBase extends javax.swing.JFrame {
     private javax.swing.JLabel BGIM;
     private javax.swing.JPanel Container;
     private javax.swing.JPanel GlassEffect;
+    private java.awt.TextField email;
+    private javax.swing.JLabel email_l;
+    private javax.swing.JLabel email_l1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel login;
     // End of variables declaration//GEN-END:variables
 }
