@@ -17,6 +17,13 @@ public class SwiftBase_Login extends javax.swing.JFrame {
      */
     public SwiftBase_Login() {
         initComponents();
+        Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+Register.addMouseListener(new java.awt.event.MouseAdapter() {
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        new registerFrame().setVisible(true);
+        dispose();
+    }
+});
    
     }
 

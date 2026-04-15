@@ -26,43 +26,95 @@ public class dashboardFrame extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        edit = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        add = new javax.swing.JButton();
+        scroll = new javax.swing.JScrollPane();
+        panel = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        logout = new javax.swing.JButton();
+        welcome_to_swiftbase = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(720, 480));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        jButton1.setText("-Logout-");
-        jButton1.setToolTipText("");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 160, 30));
+        edit.setBackground(new java.awt.Color(38, 38, 144));
+        edit.setText("EDIT");
+        add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
 
-        jLabel2.setBackground(new java.awt.Color(153, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial Black", 3, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 255, 255));
-        jLabel2.setText("Welcome to SwiftBase!");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 650, -1));
+        delete.setBackground(new java.awt.Color(144, 37, 37));
+        delete.setText("Delete");
+        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_blur.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add.setBackground(new java.awt.Color(38, 38, 144));
+        add.setText("ADD");
+        add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
+
+        scroll.setBackground(new java.awt.Color(37, 54, 113));
+        scroll.setForeground(new java.awt.Color(38, 38, 144));
+
+        panel.setBackground(new java.awt.Color(37, 54, 113));
+        panel.setForeground(new java.awt.Color(37, 54, 113));
+
+        jTable1.setBackground(new java.awt.Color(21, 26, 43));
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.setGridColor(new java.awt.Color(37, 54, 113));
+        jTable1.setSelectionBackground(new java.awt.Color(37, 54, 113));
+        jTable1.setSelectionForeground(new java.awt.Color(37, 54, 113));
+        panel.setViewportView(jTable1);
+
+        scroll.setViewportView(panel);
+
+        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 480, 280));
+
+        logout.setBackground(new java.awt.Color(255, 51, 51));
+        logout.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        logout.setText("-Logout-");
+        logout.setToolTipText("");
+        logout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        logout.addActionListener(this::logoutActionPerformed);
+        add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 120, 20));
+
+        welcome_to_swiftbase.setBackground(new java.awt.Color(153, 255, 255));
+        welcome_to_swiftbase.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
+        welcome_to_swiftbase.setForeground(new java.awt.Color(153, 255, 255));
+        welcome_to_swiftbase.setText("Welcome to SwiftBase!");
+        add(welcome_to_swiftbase, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 500, -1));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_blur.png"))); // NOI18N
+        add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
             int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "Logout", javax.swing.JOptionPane.YES_NO_OPTION);
     if (confirm == javax.swing.JOptionPane.YES_OPTION) {
         new SwiftBase_Login().setVisible(true);
         javax.swing.SwingUtilities.getWindowAncestor(this).dispose();
     }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton add;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton delete;
+    private javax.swing.JButton edit;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton logout;
+    private javax.swing.JScrollPane panel;
+    private javax.swing.JScrollPane scroll;
+    private javax.swing.JLabel welcome_to_swiftbase;
     // End of variables declaration//GEN-END:variables
 }
