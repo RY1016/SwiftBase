@@ -185,7 +185,51 @@ public class registerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        
+            String uname = Username.getText().trim();
+    String mail = Email.getText().trim();
+    String pass = new String(Password.getPassword()).trim();
+    String confirmPass = new String(Confirm_Password.getPassword()).trim();
+
+    // Validation
+    if (uname.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if (!pass.equals(confirmPass)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try (java.sql.Connection conn = DBConnection.getConnection()) {
+        // Check if email already exists
+        String checkSql = "SELECT * FROM users WHERE email = ?";
+        java.sql.PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+        checkStmt.setString(1, mail);
+        java.sql.ResultSet rs = checkStmt.executeQuery();
+
+        if (rs.next()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Email already registered.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Insert new user
+        String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, uname);
+        stmt.setString(2, mail);
+        stmt.setString(3, pass);
+        stmt.executeUpdate();
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Registered successfully!", "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        // Go to Login
+        new SwiftBase_Login().setVisible(true);
+        this.dispose();
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }   
     }//GEN-LAST:event_RegisterActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed

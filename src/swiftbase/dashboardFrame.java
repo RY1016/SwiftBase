@@ -39,20 +39,24 @@ public class dashboardFrame extends javax.swing.JPanel {
         jButton1.setToolTipText("");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 190, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 160, 30));
 
         jLabel2.setBackground(new java.awt.Color(153, 255, 255));
         jLabel2.setFont(new java.awt.Font("Arial Black", 3, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 255, 255));
         jLabel2.setText("Welcome to SwiftBase!");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 650, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 650, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_blur.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+            int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?", "Logout", javax.swing.JOptionPane.YES_NO_OPTION);
+    if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+        new SwiftBase_Login().setVisible(true);
+        javax.swing.SwingUtilities.getWindowAncestor(this).dispose();
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -165,7 +165,42 @@ public class SwiftBase_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
-        // TODO add your handling code here:
+         String mail = email_field.getText().trim();
+    String pass = new String(password_field.getPassword()).trim();
+
+    if (mail.isEmpty() || pass.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Please enter email and password.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try (java.sql.Connection conn = DBConnection.getConnection()) {
+        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, mail);
+        stmt.setString(2, pass);
+        java.sql.ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            String loggedInUser = rs.getString("username");
+            javax.swing.JOptionPane.showMessageDialog(this, "Welcome, " + loggedInUser + "!", "Login Successful", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            // Open Dashboard
+            javax.swing.JFrame dashFrame = new javax.swing.JFrame("SwiftBase - Dashboard");
+            dashboardFrame dashboard = new dashboardFrame();
+            dashFrame.setContentPane(dashboard);
+            dashFrame.setSize(720, 480);
+            dashFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+            dashFrame.setLocationRelativeTo(null);
+            dashFrame.setVisible(true);
+            this.dispose();
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Invalid email or password.", "Login Failed", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_login_btnActionPerformed
 
     private void remember_meActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remember_meActionPerformed
