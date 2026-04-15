@@ -69,7 +69,7 @@ public class SwiftBase extends javax.swing.JFrame {
         email_l1.setText("Email");
 
         jButton1.setBackground(new java.awt.Color(38, 38, 144));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("-Login-");
         jButton1.setActionCommand("-Login-");
@@ -85,6 +85,7 @@ public class SwiftBase extends javax.swing.JFrame {
 
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Remember me");
+        jCheckBox1.addActionListener(this::jCheckBox1ActionPerformed);
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
@@ -159,7 +160,7 @@ public class SwiftBase extends javax.swing.JFrame {
 
         getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 300, 360));
 
-        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/B3.png"))); // NOI18N
+        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg1(updated).png"))); // NOI18N
         getContentPane().add(BGIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
@@ -169,6 +170,10 @@ public class SwiftBase extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
