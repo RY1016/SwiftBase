@@ -15,8 +15,25 @@ public class dashboardFrame extends javax.swing.JPanel {
      */
     public dashboardFrame() {
         initComponents();
+        loadUsers();
     }
+private void loadUsers() {
+    try (java.sql.Connection conn = DBConnection.getConnection()) {
+        String sql = "SELECT id, username, email FROM users";
+        java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+        java.sql.ResultSet rs = stmt.executeQuery();
 
+        javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+            new Object[]{"ID", "Username", "Email"}, 0);
+        jTable1.setModel(model);
+
+        while (rs.next()) {
+            model.addRow(new Object[]{rs.getInt("id"), rs.getString("username"), rs.getString("email")});
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,16 +57,25 @@ public class dashboardFrame extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         edit.setBackground(new java.awt.Color(38, 38, 144));
+        edit.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        edit.setForeground(new java.awt.Color(255, 255, 255));
         edit.setText("EDIT");
-        add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
+        edit.addActionListener(this::editActionPerformed);
+        add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
 
         delete.setBackground(new java.awt.Color(144, 37, 37));
+        delete.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        delete.setForeground(new java.awt.Color(255, 255, 255));
         delete.setText("Delete");
-        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, -1));
+        delete.addActionListener(this::deleteActionPerformed);
+        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, -1));
 
         add.setBackground(new java.awt.Color(38, 38, 144));
+        add.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
         add.setText("ADD");
-        add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
+        add.addActionListener(this::addActionPerformed);
+        add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, -1, -1));
 
         scroll.setBackground(new java.awt.Color(37, 54, 113));
         scroll.setForeground(new java.awt.Color(38, 38, 144));
@@ -57,8 +83,9 @@ public class dashboardFrame extends javax.swing.JPanel {
         panel.setBackground(new java.awt.Color(37, 54, 113));
         panel.setForeground(new java.awt.Color(37, 54, 113));
 
-        jTable1.setBackground(new java.awt.Color(21, 26, 43));
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
+        jTable1.setBackground(new java.awt.Color(38, 38, 144));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -70,14 +97,14 @@ public class dashboardFrame extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(37, 54, 113));
-        jTable1.setSelectionBackground(new java.awt.Color(37, 54, 113));
-        jTable1.setSelectionForeground(new java.awt.Color(37, 54, 113));
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setSelectionBackground(new java.awt.Color(38, 38, 144));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
         panel.setViewportView(jTable1);
 
         scroll.setViewportView(panel);
 
-        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 480, 280));
+        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 360, 280));
 
         logout.setBackground(new java.awt.Color(255, 51, 51));
         logout.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -85,7 +112,7 @@ public class dashboardFrame extends javax.swing.JPanel {
         logout.setToolTipText("");
         logout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logout.addActionListener(this::logoutActionPerformed);
-        add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 120, 20));
+        add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 120, 20));
 
         welcome_to_swiftbase.setBackground(new java.awt.Color(153, 255, 255));
         welcome_to_swiftbase.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
@@ -104,6 +131,98 @@ public class dashboardFrame extends javax.swing.JPanel {
         javax.swing.SwingUtilities.getWindowAncestor(this).dispose();
     }
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+
+    String username = javax.swing.JOptionPane.showInputDialog(this, "Enter Username:");
+    if (username == null || username.trim().isEmpty()) return;
+
+    String email = javax.swing.JOptionPane.showInputDialog(this, "Enter Email:");
+    if (email == null || email.trim().isEmpty()) return;
+
+    String password = javax.swing.JOptionPane.showInputDialog(this, "Enter Password:");
+    if (password == null || password.trim().isEmpty()) return;
+
+    try (java.sql.Connection conn = DBConnection.getConnection()) {
+        String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, username.trim());
+        stmt.setString(2, email.trim());
+        stmt.setString(3, password.trim());
+        stmt.executeUpdate();
+
+        javax.swing.JOptionPane.showMessageDialog(this, "User added successfully!");
+        loadUsers();
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+
+    }//GEN-LAST:event_addActionPerformed
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow == -1) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Please select a user to edit.");
+        return;
+    }
+
+    int id = (int) jTable1.getValueAt(selectedRow, 0);
+    String currentUsername = (String) jTable1.getValueAt(selectedRow, 1);
+    String currentEmail = (String) jTable1.getValueAt(selectedRow, 2);
+
+    String newUsername = javax.swing.JOptionPane.showInputDialog(this, "Edit Username:", currentUsername);
+    if (newUsername == null || newUsername.trim().isEmpty()) return;
+
+    String newEmail = javax.swing.JOptionPane.showInputDialog(this, "Edit Email:", currentEmail);
+    if (newEmail == null || newEmail.trim().isEmpty()) return;
+
+    try (java.sql.Connection conn = DBConnection.getConnection()) {
+        String sql = "UPDATE users SET username = ?, email = ? WHERE id = ?";
+        java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, newUsername.trim());
+        stmt.setString(2, newEmail.trim());
+        stmt.setInt(3, id);
+        stmt.executeUpdate();
+
+        javax.swing.JOptionPane.showMessageDialog(this, "User updated successfully!");
+        loadUsers();
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+    }//GEN-LAST:event_editActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow == -1) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Please select a user to delete.");
+        return;
+    }
+
+    int id = (int) jTable1.getValueAt(selectedRow, 0);
+    String username = (String) jTable1.getValueAt(selectedRow, 1);
+
+    int confirm = javax.swing.JOptionPane.showConfirmDialog(this, 
+        "Are you sure you want to delete " + username + "?", 
+        "Delete User", 
+        javax.swing.JOptionPane.YES_NO_OPTION);
+
+    if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+        try (java.sql.Connection conn = DBConnection.getConnection()) {
+            String sql = "DELETE FROM users WHERE id = ?";
+            java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            javax.swing.JOptionPane.showMessageDialog(this, "User deleted successfully!");
+            loadUsers();
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }
+    }//GEN-LAST:event_deleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
