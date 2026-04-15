@@ -28,34 +28,34 @@ public class SwiftBase_Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Container = new javax.swing.JPanel();
+        Login_Form = new javax.swing.JPanel();
         login = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password_field = new javax.swing.JPasswordField();
         password = new javax.swing.JLabel();
         email_l1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        login_btn = new javax.swing.JButton();
+        email_field = new javax.swing.JTextField();
+        remember_me = new javax.swing.JCheckBox();
+        forgot_password = new javax.swing.JLabel();
+        dont_have_account = new javax.swing.JLabel();
+        Register = new javax.swing.JLabel();
         BGIM = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Container.setBackground(new java.awt.Color(21, 26, 43));
-        Container.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Login_Form.setBackground(new java.awt.Color(21, 26, 43));
+        Login_Form.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         login.setBackground(new java.awt.Color(204, 204, 204));
         login.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("Login");
 
-        jPasswordField1.setBackground(new java.awt.Color(38, 26, 87));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        password_field.setBackground(new java.awt.Color(38, 26, 87));
+        password_field.setForeground(new java.awt.Color(255, 255, 255));
+        password_field.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         password.setBackground(new java.awt.Color(255, 255, 255));
         password.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -67,95 +67,95 @@ public class SwiftBase_Login extends javax.swing.JFrame {
         email_l1.setForeground(new java.awt.Color(255, 255, 255));
         email_l1.setText("Email");
 
-        jButton1.setBackground(new java.awt.Color(38, 38, 144));
-        jButton1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("-Login-");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        login_btn.setBackground(new java.awt.Color(38, 38, 144));
+        login_btn.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        login_btn.setForeground(new java.awt.Color(255, 255, 255));
+        login_btn.setText("-Login-");
+        login_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        login_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        login_btn.addActionListener(this::login_btnActionPerformed);
 
-        jTextField1.setBackground(new java.awt.Color(38, 26, 87));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        email_field.setBackground(new java.awt.Color(38, 26, 87));
+        email_field.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        email_field.setForeground(new java.awt.Color(255, 255, 255));
+        email_field.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Remember me");
-        jCheckBox1.addActionListener(this::jCheckBox1ActionPerformed);
+        remember_me.setForeground(new java.awt.Color(255, 255, 255));
+        remember_me.setText("Remember me");
+        remember_me.addActionListener(this::remember_meActionPerformed);
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("forgot password?");
+        forgot_password.setBackground(new java.awt.Color(153, 153, 153));
+        forgot_password.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
+        forgot_password.setForeground(new java.awt.Color(255, 255, 255));
+        forgot_password.setText("forgot password?");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Don't have an account?");
+        dont_have_account.setBackground(new java.awt.Color(255, 255, 255));
+        dont_have_account.setForeground(new java.awt.Color(255, 255, 255));
+        dont_have_account.setText("Don't have an account?");
 
-        jLabel3.setBackground(new java.awt.Color(204, 0, 51));
-        jLabel3.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(" Register");
+        Register.setBackground(new java.awt.Color(204, 0, 51));
+        Register.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        Register.setForeground(new java.awt.Color(255, 255, 255));
+        Register.setText(" Register");
 
-        javax.swing.GroupLayout ContainerLayout = new javax.swing.GroupLayout(Container);
-        Container.setLayout(ContainerLayout);
-        ContainerLayout.setHorizontalGroup(
-            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
-                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContainerLayout.createSequentialGroup()
+        javax.swing.GroupLayout Login_FormLayout = new javax.swing.GroupLayout(Login_Form);
+        Login_Form.setLayout(Login_FormLayout);
+        Login_FormLayout.setHorizontalGroup(
+            Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Login_FormLayout.createSequentialGroup()
+                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Login_FormLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(ContainerLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox1)
+                        .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(Login_FormLayout.createSequentialGroup()
+                                    .addComponent(remember_me)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                                    .addComponent(jLabel1))
+                                    .addComponent(forgot_password))
                                 .addComponent(email_l1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(password_field, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(ContainerLayout.createSequentialGroup()
+                                .addComponent(email_field, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(Login_FormLayout.createSequentialGroup()
                                 .addGap(23, 23, 23)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dont_have_account, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ContainerLayout.createSequentialGroup()
+                                .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Login_FormLayout.createSequentialGroup()
                                 .addGap(32, 32, 32)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(ContainerLayout.createSequentialGroup()
+                                .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(Login_FormLayout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(login)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
-        ContainerLayout.setVerticalGroup(
-            ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
+        Login_FormLayout.setVerticalGroup(
+            Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Login_FormLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(email_l1)
                 .addGap(9, 9, 9)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(email_field, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password_field, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jLabel1))
+                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(remember_me)
+                    .addComponent(forgot_password))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dont_have_account)
+                    .addComponent(Register))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 300, 360));
+        getContentPane().add(Login_Form, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 300, 360));
 
         BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg1(updated).png"))); // NOI18N
         getContentPane().add(BGIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
@@ -164,13 +164,13 @@ public class SwiftBase_Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_login_btnActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void remember_meActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remember_meActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_remember_meActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,16 +199,16 @@ public class SwiftBase_Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BGIM;
-    private javax.swing.JPanel Container;
+    private javax.swing.JPanel Login_Form;
+    private javax.swing.JLabel Register;
+    private javax.swing.JLabel dont_have_account;
+    private javax.swing.JTextField email_field;
     private javax.swing.JLabel email_l1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel forgot_password;
     private javax.swing.JLabel login;
+    private javax.swing.JButton login_btn;
     private javax.swing.JLabel password;
+    private javax.swing.JPasswordField password_field;
+    private javax.swing.JCheckBox remember_me;
     // End of variables declaration//GEN-END:variables
 }

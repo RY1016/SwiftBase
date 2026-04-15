@@ -26,7 +26,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="Container">
+    <Container class="javax.swing.JPanel" name="Login_Form">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="2b" green="1a" red="15" type="rgb"/>
@@ -53,24 +53,24 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="remember_me" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="43" max="32767" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="forgot_password" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="email_l1" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="password_field" alignment="0" max="32767" attributes="0"/>
                                   <Component id="password" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="email_field" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="dont_have_account" min="-2" pref="123" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="Register" min="-2" pref="69" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="login_btn" min="-2" pref="163" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -91,22 +91,22 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="email_l1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="email_field" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="password" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="password_field" min="-2" pref="26" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="remember_me" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="forgot_password" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="login_btn" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dont_have_account" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Register" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
@@ -128,7 +128,7 @@
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="password_field">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="57" green="1a" red="26" type="rgb"/>
@@ -171,7 +171,7 @@
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="login_btn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="90" green="26" red="26" type="rgb"/>
@@ -193,10 +193,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="login_btnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="email_field">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="57" green="1a" red="26" type="rgb"/>
@@ -214,7 +214,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="remember_me">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -222,10 +222,10 @@
             <Property name="text" type="java.lang.String" value="Remember me"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="remember_meActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="forgot_password">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -239,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="forgot password?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="dont_have_account">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -250,7 +250,7 @@
             <Property name="text" type="java.lang.String" value="Don&apos;t have an account?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="Register">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>

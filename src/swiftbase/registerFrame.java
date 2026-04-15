@@ -29,18 +29,18 @@ public class registerFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        REGISTER = new javax.swing.JLabel();
+        Username = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
+        Password = new javax.swing.JPasswordField();
+        Confirm_Password = new javax.swing.JPasswordField();
+        username = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
+        confirm_password = new javax.swing.JLabel();
+        Register = new javax.swing.JButton();
+        already_have_acc = new javax.swing.JLabel();
+        login = new javax.swing.JLabel();
         BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,64 +51,65 @@ public class registerFrame extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(300, 360));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Register");
+        REGISTER.setBackground(new java.awt.Color(255, 255, 255));
+        REGISTER.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
+        REGISTER.setForeground(new java.awt.Color(255, 255, 255));
+        REGISTER.setText("Register");
 
-        jTextField1.setBackground(new java.awt.Color(38, 26, 87));
-        jTextField1.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Username.setBackground(new java.awt.Color(38, 26, 87));
+        Username.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        Username.setForeground(new java.awt.Color(255, 255, 255));
+        Username.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Username.addActionListener(this::UsernameActionPerformed);
 
-        jTextField2.setBackground(new java.awt.Color(38, 26, 87));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Email.setBackground(new java.awt.Color(38, 26, 87));
+        Email.setForeground(new java.awt.Color(255, 255, 255));
+        Email.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPasswordField1.setBackground(new java.awt.Color(38, 26, 87));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
+        Password.setBackground(new java.awt.Color(38, 26, 87));
+        Password.setForeground(new java.awt.Color(255, 255, 255));
+        Password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Password.addActionListener(this::PasswordActionPerformed);
 
-        jPasswordField2.setBackground(new java.awt.Color(38, 26, 87));
-        jPasswordField2.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Confirm_Password.setBackground(new java.awt.Color(38, 26, 87));
+        Confirm_Password.setForeground(new java.awt.Color(255, 255, 255));
+        Confirm_Password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Username");
+        username.setBackground(new java.awt.Color(255, 255, 255));
+        username.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setText("Username");
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Email");
+        email.setBackground(new java.awt.Color(255, 255, 255));
+        email.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.setText("Email");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Password");
+        password.setBackground(new java.awt.Color(255, 255, 255));
+        password.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setText("Password");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Confirm Password");
+        confirm_password.setBackground(new java.awt.Color(255, 255, 255));
+        confirm_password.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        confirm_password.setForeground(new java.awt.Color(255, 255, 255));
+        confirm_password.setText("Confirm Password");
 
-        jButton1.setBackground(new java.awt.Color(38, 38, 144));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jButton1.setText("-Register-");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        Register.setBackground(new java.awt.Color(38, 38, 144));
+        Register.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        Register.setText("-Register-");
+        Register.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Register.addActionListener(this::RegisterActionPerformed);
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Already have an account? ");
+        already_have_acc.setBackground(new java.awt.Color(255, 255, 255));
+        already_have_acc.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        already_have_acc.setForeground(new java.awt.Color(255, 255, 255));
+        already_have_acc.setText("Already have an account? ");
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("\"Login\"");
+        login.setBackground(new java.awt.Color(255, 255, 255));
+        login.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("\"Login\"");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,56 +119,56 @@ public class registerFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
+                        .addComponent(REGISTER, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPasswordField1)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                .addComponent(Username, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Password)
+                                .addComponent(confirm_password, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jPasswordField2))
+                                    .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Confirm_Password))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel6)
+                                .addComponent(already_have_acc)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(REGISTER)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(username)
                 .addGap(2, 2, 2)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addComponent(jLabel3)
+                .addComponent(email)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel4)
+                .addComponent(password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(confirm_password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Confirm_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(already_have_acc)
+                    .addComponent(login))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -179,13 +180,17 @@ public class registerFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_PasswordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
+        
+    }//GEN-LAST:event_RegisterActionPerformed
+
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_UsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,18 +219,18 @@ public class registerFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BG;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPasswordField Confirm_Password;
+    private javax.swing.JTextField Email;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JLabel REGISTER;
+    private javax.swing.JButton Register;
+    private javax.swing.JTextField Username;
+    private javax.swing.JLabel already_have_acc;
+    private javax.swing.JLabel confirm_password;
+    private javax.swing.JLabel email;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel login;
+    private javax.swing.JLabel password;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }
