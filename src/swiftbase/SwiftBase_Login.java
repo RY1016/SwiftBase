@@ -8,14 +8,14 @@ package swiftbase;
  *
  * @author Raichuu
  */
-public class SwiftBase extends javax.swing.JFrame {
+public class SwiftBase_Login extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SwiftBase.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SwiftBase_Login.class.getName());
 
     /**
      * Creates new form SwiftBase
      */
-    public SwiftBase() {
+    public SwiftBase_Login() {
         initComponents();
     }
 
@@ -55,7 +55,6 @@ public class SwiftBase extends javax.swing.JFrame {
 
         jPasswordField1.setBackground(new java.awt.Color(38, 26, 87));
         jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         password.setBackground(new java.awt.Color(255, 255, 255));
@@ -72,7 +71,6 @@ public class SwiftBase extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("-Login-");
-        jButton1.setActionCommand("-Login-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(this::jButton1ActionPerformed);
@@ -80,7 +78,6 @@ public class SwiftBase extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(38, 26, 87));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("email");
         jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
@@ -197,7 +194,7 @@ public class SwiftBase extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new SwiftBase().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new SwiftBase_Login().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
