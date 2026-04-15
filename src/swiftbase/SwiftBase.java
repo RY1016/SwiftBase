@@ -30,24 +30,19 @@ public class SwiftBase extends javax.swing.JFrame {
 
         Container = new javax.swing.JPanel();
         login = new javax.swing.JLabel();
-        email = new java.awt.TextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        email_l = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
         email_l1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         BGIM = new javax.swing.JLabel();
-        GlassEffect =  new javax.swing.JPanel() {
-            @Override
-            protected void paintComponent(java.awt.Graphics g) {
-                java.awt.Graphics2D g2d = (java.awt.Graphics2D) g;
-                g2d.setColor(new java.awt.Color(255, 255, 255, 60));
-                g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
-            }
-        };
-        GlassEffect.setOpaque(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setPreferredSize(new java.awt.Dimension(720, 480));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Container.setBackground(new java.awt.Color(21, 26, 43));
@@ -58,23 +53,52 @@ public class SwiftBase extends javax.swing.JFrame {
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("Login");
 
-        email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        email.setForeground(new java.awt.Color(204, 204, 204));
-        email.setText("Email");
-
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setBackground(new java.awt.Color(38, 26, 87));
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        email_l.setBackground(new java.awt.Color(255, 255, 255));
-        email_l.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        email_l.setForeground(new java.awt.Color(255, 255, 255));
-        email_l.setText("Password");
+        password.setBackground(new java.awt.Color(255, 255, 255));
+        password.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setText("Password");
 
         email_l1.setBackground(new java.awt.Color(255, 255, 255));
         email_l1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         email_l1.setForeground(new java.awt.Color(255, 255, 255));
         email_l1.setText("Email");
+
+        jButton1.setBackground(new java.awt.Color(38, 38, 144));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("-Login-");
+        jButton1.setActionCommand("-Login-");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        jTextField1.setBackground(new java.awt.Color(38, 26, 87));
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setText("email");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("Remember me");
+
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("forgot password?");
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Don't have an account?");
+
+        jLabel3.setBackground(new java.awt.Color(204, 0, 51));
+        jLabel3.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText(" Register");
 
         javax.swing.GroupLayout ContainerLayout = new javax.swing.GroupLayout(Container);
         Container.setLayout(ContainerLayout);
@@ -84,54 +108,67 @@ public class SwiftBase extends javax.swing.JFrame {
                 .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ContainerLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                            .addComponent(email_l, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(email_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(ContainerLayout.createSequentialGroup()
+                                    .addComponent(jCheckBox1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                    .addComponent(jLabel1))
+                                .addComponent(email_l1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(ContainerLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ContainerLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ContainerLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(89, 89, 89)
                         .addComponent(login)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         ContainerLayout.setVerticalGroup(
             ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(22, 22, 22)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(email_l1)
+                .addGap(9, 9, 9)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email_l)
+                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 280, 350));
+        getContentPane().add(Container, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 300, 360));
 
-        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg1.png"))); // NOI18N
-        BGIM.setPreferredSize(new java.awt.Dimension(720, 480));
+        BGIM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/B3.png"))); // NOI18N
         getContentPane().add(BGIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
-
-        javax.swing.GroupLayout GlassEffectLayout = new javax.swing.GroupLayout(GlassEffect);
-        GlassEffect.setLayout(GlassEffectLayout);
-        GlassEffectLayout.setHorizontalGroup(
-            GlassEffectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 224, Short.MAX_VALUE)
-        );
-        GlassEffectLayout.setVerticalGroup(
-            GlassEffectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 302, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(GlassEffect, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +198,15 @@ public class SwiftBase extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BGIM;
     private javax.swing.JPanel Container;
-    private javax.swing.JPanel GlassEffect;
-    private java.awt.TextField email;
-    private javax.swing.JLabel email_l;
     private javax.swing.JLabel email_l1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel login;
+    private javax.swing.JLabel password;
     // End of variables declaration//GEN-END:variables
 }
