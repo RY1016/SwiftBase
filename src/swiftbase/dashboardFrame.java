@@ -108,11 +108,12 @@ private void loadUsers() {
 
         logout.setBackground(new java.awt.Color(255, 51, 51));
         logout.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setText("-Logout-");
         logout.setToolTipText("");
         logout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logout.addActionListener(this::logoutActionPerformed);
-        add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 120, 20));
+        add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 400, 120, 20));
 
         welcome_to_swiftbase.setBackground(new java.awt.Color(153, 255, 255));
         welcome_to_swiftbase.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
