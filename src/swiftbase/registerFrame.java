@@ -17,6 +17,13 @@ public class registerFrame extends javax.swing.JFrame {
      */
     public registerFrame() {
         initComponents();
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        new SwiftBase_Login().setVisible(true);
+        dispose();
+    }
+});
     }
 
     /**

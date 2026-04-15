@@ -17,6 +17,7 @@ public class SwiftBase_Login extends javax.swing.JFrame {
      */
     public SwiftBase_Login() {
         initComponents();
+   
     }
 
     /**
